@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+  <div class="dashboard-container">
+    <h2>Welcome, {{ session.get('username', 'Guest') }}!</h2>
+    <p>Click below to start your quiz.</p>
+    <a href="{{ url_for('start_new_quiz') }}" class="btn btn-primary">Start New Quiz</a>
+  </div>
+
+  <style>
+    .dashboard-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+  </style>
+{% endblock %}
